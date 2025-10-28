@@ -1,0 +1,58 @@
+# ============================
+# ⚛️ React + Vite Project
+# ============================
+
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# Local environment variables
+.env
+.env.*.local
+.env.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+vite-error.log*
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Cache files
+.cache/
+*.log
+*.tmp
+*.swp
+*.lock
+*.bak
+*.orig
+
+# Optional: Test coverage
+coverage/
+
+# Local test outputs
+*.tsbuildinfo
+*.eslintcache
+
+# Misc
+*.env
+*.secret
+*.bak
+*.zip
+
+# GitHub Actions or CI cache
+.github/

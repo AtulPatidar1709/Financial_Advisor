@@ -1,0 +1,386 @@
+/* FinancialForm.css
+   Style: Corporate Blue
+   Font: Nunito (rounded)
+*/
+
+/* Import Nunito from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --primary: #1e6fff;        /* corporate blue */
+  --primary-600: #165bd6;
+  --accent: #0b74ff;
+  --muted: #7b8aa3;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --shadow: 0 6px 20px rgba(32,45,72,0.06);
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --gap: 14px;
+  --max-width: 980px;
+}
+
+* { box-sizing: border-box; }
+html,body,#root { height: 100%; }
+body {
+  font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+  color: #0f1724;
+  margin: 0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Form container */
+.financial-form {
+  max-width: var(--max-width);
+  margin: 28px auto;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(30,111,255,0.06);
+
+}
+
+/* Header */
+.financial-form h1 {
+  font-size: 20px;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  color: var(--primary-600);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Section card */
+.section {
+  background: linear-gradient(180deg, rgba(30,111,255,0.02), rgba(30,111,255,0.00));
+  border: 1px solid rgba(30,111,255,0.06);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Section header */
+.section h2 {
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Small helper text in sections */
+.section small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* Add button inside section */
+.add-btn {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-600));
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 6px 18px rgba(30,111,255,0.12);
+}
+.add-btn:active { transform: translateY(1px); }
+.add-btn:hover { opacity: 0.97; }
+
+/* Input row */
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 48px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rent-input {
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Make it flexible if fewer columns */
+.input-row input[type="text"],
+.input-row input[type="number"],
+.input-row input[type="tel"],
+.input-row input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(15,23,36,0.06);
+  background: #fff;
+  font-size: 14px;
+  color: #0f1724;
+  outline: none;
+}
+.input-row input::placeholder { color: #a3b0c7; font-weight: 400; }
+
+/* Delete button */
+.delete-btn {
+  background: transparent;
+  border: 1px solid rgba(239,68,68,0.08);
+  color: var(--danger);
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.delete-btn:hover { background: rgba(239,68,68,0.06); }
+
+/* Yes/No buttons */
+.yesno-btn {
+  border: 1px solid rgba(15,23,36,0.06);
+  background: white;
+  padding: 8px 12px;
+  margin-right: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.yesno-btn.active {
+  background: linear-gradient(90deg,var(--primary),var(--primary-600));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(30,111,255,0.12);
+}
+
+/* Date Input Styling */
+input[type="month"] {
+  appearance: none;
+  background-color: #ffffff;
+  padding-right: 35px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" width="20" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+input[type="month"]:focus,
+.input-row input:focus {
+  border-color: #3f51b5;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+/* Submit button */
+.submit-btn {
+  display: inline-block;
+  background: linear-gradient(90deg,var(--primary),var(--primary-600));
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(30,111,255,0.12);
+}
+.submit-btn:hover { opacity: 0.98; }
+
+/* Housing small input alignment */
+.section input[type="number"].rent {
+  max-width: 220px;
+}
+
+/* Health issues special layout */
+.section .add-health-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* SIP Portfolio special tweaks */
+.section h2.sip-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Financial Health Score chip */
+.health-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: linear-gradient(90deg, rgba(30,111,255,0.06), rgba(30,111,255,0.02));
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(30,111,255,0.06);
+}
+.health-score .score {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-600);
+}
+.health-score .meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 920px) {
+  .input-row {
+    grid-template-columns: repeat(3, 1fr) 48px;
+  }
+}
+@media (max-width: 680px) {
+  .financial-form {
+    padding: 18px;
+    margin: 10px;
+  }
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+  .add-btn, .submit-btn {
+    width: 100%;
+  }
+  .delete-btn {
+    width: 100%;
+    height: 40px;
+  }
+  .section {
+    padding: 12px;
+  }
+}
+
+/* Tiny screens */
+@media (max-width: 420px) {
+  .financial-form h1 {
+    font-size: 18px;
+  }
+  .section h2 {
+    font-size: 15px;
+  }
+  .input-row input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  .health-score .score {
+    font-size: 18px;
+  }
+}
+
+/* Utility helpers */
+.row-between {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.muted { color: var(--muted); font-size: 13px; }
+.small { font-size: 13px; color: var(--muted); }
+.bold { font-weight: 700; }
+
+/* Focus styles for accessibility */
+.input-row input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(11,116,255,0.08);
+  outline: none;
+}
+
+/* Form hint / warning bar */
+.form-warning {
+  background: linear-gradient(90deg,#fff4f4, #fff);
+  border: 1px solid rgba(239,68,68,0.08);
+  color: var(--danger);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+/* Nice subtle footer inside form */
+.form-footer {
+  margin-top: 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Table-like timeline in small cards (for SIP summary) */
+.sip-summary {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.sip-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(30,111,255,0.04);
+  box-shadow: 0 6px 18px rgba(15,23,36,0.03);
+}
+.sip-card h4 { margin: 0 0 6px 0; font-size:14px; color:var(--primary); }
+.sip-card p { margin: 0; color:var(--muted); font-size:13px; }
+
+/* Accessibility: bigger tap targets */
+.add-btn, .submit-btn, .yesno-btn, .delete-btn {
+  touch-action: manipulation;
+}
+
+/* Print-friendly adjustments */
+@media print {
+  body { background: white; }
+  .financial-form { box-shadow: none; border: none; max-width: 100%; padding: 8px; }
+  .add-btn, .delete-btn { display: none; }
+  .submit-btn { display: none; }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  font-family: 'Inter', sans-serif;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #dbeafe;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-overlay p {
+  font-size: 1.2rem;
+  color: #1e3a8a;
+  font-weight: 600;
+}
