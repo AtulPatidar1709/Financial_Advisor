@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import "./AdviceResult.css";
 
 export default function AdviceResult() {
@@ -30,7 +31,10 @@ export default function AdviceResult() {
 
       {/* Render Markdown beautifully instead of plain HTML */}
       <div className="advice-section markdown-body">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown 
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+          >
           {advice}
         </ReactMarkdown>
       </div>

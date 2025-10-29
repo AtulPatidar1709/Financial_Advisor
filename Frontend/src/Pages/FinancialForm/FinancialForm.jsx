@@ -97,36 +97,18 @@ const FinancialForm = () => {
         setSipSummaries(summaries);
     }, [formData.sips]);
 
-    // Rules
-    const FINANCIAL_ADVISOR_RULES = import.meta.env.VITE_FINANCIAL_ADVISOR_RULES;
-
-    // Generate Advice
     const getFinancialAdvice = async (payload) => {
-        const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        const res = await fetch("/.netlify/functions/getAdvice", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-            },
-            body: JSON.stringify({
-                model: "openai/gpt-oss-20b:free",
-                messages: [
-                    { role: "system", content: FINANCIAL_ADVISOR_RULES },
-                    { role: "user", content: JSON.stringify(payload) },
-                ],
-            }),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
         });
 
-        if (!res.ok) throw new Error("API Error");
+        if (!res.ok) throw new Error("AI API Error");
         const data = await res.json();
-        return (
-            data?.choices?.[0]?.message?.content ||
-            data?.choices?.[0]?.text ||
-            data?.output?.[0]?.content?.[0]?.text ||
-            ""
-        );
+        return data.advice;
     };
-
+    
     // Submit
     const handleSubmit = async (e) => {
         e.preventDefault();

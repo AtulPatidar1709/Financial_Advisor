@@ -1,58 +1,27 @@
-# ============================
-# ⚛️ React + Vite Project
-# ============================
-
-# Node dependencies
+# Node
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Build output
 dist/
 build/
-out/
+.netlify/
 
-# Local environment variables
+# Environment
 .env
-.env.*.local
 .env.local
+.env.development.local
+.env.production.local
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-vite-error.log*
-
-# Editor / IDE files
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# OS-generated files
+# System
 .DS_Store
 Thumbs.db
 
-# Cache files
-.cache/
+# IDE
+.vscode/
+.idea/
+
+# Logs
 *.log
-*.tmp
-*.swp
-*.lock
-*.bak
-*.orig
-
-# Optional: Test coverage
-coverage/
-
-# Local test outputs
-*.tsbuildinfo
-*.eslintcache
-
-# Misc
-*.env
-*.secret
-*.bak
-*.zip
-
-# GitHub Actions or CI cache
-.github/
