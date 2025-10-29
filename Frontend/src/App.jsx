@@ -1,8 +1,8 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import FinancialForm from './components/FinancialForm.jsx';
-import AdviceResult from './components/AdviceResult.jsx';
+import FinancialForm from './Pages/FinancialForm/FinancialForm.jsx';
+import AdviceResult from './Pages/AdviceResult/AdviceResult.jsx';
 
 function App() {
 

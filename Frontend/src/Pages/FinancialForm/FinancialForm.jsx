@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./FinancialForm.css";
-import { calculateSIPValue, formatINR, monthsBetween } from "./helper";
-import { Section } from "./Section";
-import { InputRow } from "./InputRow";
-import { YesNo } from "./YesNo";
+import { calculateSIPValue, formatINR, monthsBetween } from "../../components/helper";
+import { Section } from "../../components/Section";
+import { InputRow } from "../../components/InputRow";
+import { YesNo } from "../../components/YesNo";
 
 const FinancialForm = () => {
     const navigate = useNavigate();
