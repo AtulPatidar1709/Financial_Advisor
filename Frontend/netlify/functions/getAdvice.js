@@ -3,8 +3,6 @@
 const FINANCIAL_ADVISOR_RULES = process.env.FINANCIAL_ADVISOR_RULES;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
-console.log("ENV CHECK", !!OPENAI_API_KEY, !!FINANCIAL_ADVISOR_RULES);
-
 export async function handler(event, context) {
   if (event.httpMethod !== "POST") {
     return {
