@@ -14,4 +14,8 @@
 
   # Apply to all functions
   [functions."*"]
+<<<<<<< HEAD
     timeout = 26
+=======
+    timeout = 26
+>>>>>>> f608752d1b59d3d2249dc738024c9ae4e0e7b690
