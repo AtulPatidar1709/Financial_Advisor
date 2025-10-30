@@ -1,6 +1,6 @@
 [build]
-  publish = "dist"
   command = "npm run build"
+  publish = "dist"
   functions = "netlify/functions"
 
 [dev]
@@ -11,4 +11,7 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-  timeout = 26
+
+  # Apply to all functions
+  [functions."*"]
+    timeout = 26
