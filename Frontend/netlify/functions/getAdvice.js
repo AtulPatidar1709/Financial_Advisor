@@ -3,6 +3,9 @@
 const FINANCIAL_ADVISOR_RULES = process.env.FINANCIAL_ADVISOR_RULES;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
+console.log("FINANCIAL_ADVISOR_RULES ", FINANCIAL_ADVISOR_RULES);
+console.log("OPENAI_API_KEY ", OPENAI_API_KEY);
+
 export async function handler(event, context) {
   if (event.httpMethod !== "POST") {
     return {
