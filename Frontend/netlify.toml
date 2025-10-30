@@ -1,21 +1,13 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
-  functions = "netlify/functions"
+  base = "Frontend"
+  publish = "Frontend/dist"
+  functions = "Frontend/netlify/functions"
 
 [dev]
   command = "npm run dev"
-  functions = "netlify/functions"
-  publish = "dist"
+  functions = "Frontend/netlify/functions"
+  targetPort = 5173
+  port = 8888
 
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
-  # Apply to all functions
-  [functions."*"]
-<<<<<<< HEAD
-    timeout = 26
-=======
-    timeout = 26
->>>>>>> f608752d1b59d3d2249dc738024c9ae4e0e7b690
+[functions."*"]
+  timeout = 26
